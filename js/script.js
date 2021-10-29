@@ -1,61 +1,58 @@
 let parolaUtente = prompt('Inserisci una parola qualsiasi');
-let risultato = isPalindromo(parolaUtente);
+let esito = isPalindromo(parolaUtente);
 
-console.log(risultato);
+console.log(esito);
 
 function isPalindromo(parola) {
   for (let i = 0; i < parola.length / 2; i++) {
 
     if(parola[i] !== parola[parola.length - 1 - i]) {
-      console.log(parola[i]);
-      return 'la parola non è palindroma';
+      // console.log(parola[i]);
+      return `la parola ${parola} non è palindroma`;
     }
   }
-  return 'la parola è palindroma';
+  return `la parola ${parola} è palindroma`;
 }
 
-//INIZIO PARI E DISPARI ***********************************************************************************
-
-let pdUtente;
+let pdUser;
 do{
-  pdUtente = prompt('Scegli pari o dispari');
-}while (pdUtente !== 'pari' && pdUtente !== 'dispari') 
+  pdUser = prompt('Scegli pari o dispari');
+  // let pdUser = 'pari';
+} while (pdUser !== 'pari' && pdUser !== 'dispari') 
 
 let numUtente;
 do{
   numUtente = parseInt(prompt('Inserisci un numero da 1 a 5'));
-}while (numUtente < 1 || numUtente > 5);
+  // numUtente = 3;
+} while (numUtente < 1 || numUtente > 5);
 
-
-
-function numeroCPU(max, min){
-  numeroRandom = Math.floor(Math.random()*max + min);
+//creo la funzione per generare numero random 1-5
+function calcolaNumero (max, min){
+  let numeroRandom = Math.floor(Math.random()*max + min);
+  return numeroRandom;
 }
 
-let risultatoFinale = parDis(pdUtente, numUtente, numeroCPU(5,1));
+//memorizzo il numero calcolato in una variabile
+let numeroCPU = calcolaNumero(5,1);
 
-console.log("hai scelto", pdUtente);
+console.log('pd utente',pdUser);
+console.log('num utente', numUtente);
+console.log('numeroRandom',numeroCPU);
 
-function parDis(utentePD, utenteNum, numCPU ){
+let sommaNum = numUtente + numeroCPU;
+console.log('somma',sommaNum);
 
-  // let somma = parseInt(utenteNum) + parseInt(numCPU);
-  // console.log('utenteNum', utenteNum);
-  // console.log('numCPU', numCPU);
-
-    if((utenteNum + numCPU) % 2 === 0){
-      if(utentePD === "pari")
-      return "hai perso" ;
-    }else {
-      return "hai vinto"; 
-    }
-
+//creo la funziona per stabilire chi vince il pari e dispari in base alla scelta iniziale
+function dimmichivince(somma, pdUtente){
+  if(somma % 2 === 0 && pdUtente==='pari'){
+    return 'HAI VINTO';
+  } else if(somma % 2 !== 0 && pdUtente==='dispari'){
+    return'HAI VINTO';
+  }else{
+    return'HAI PERSO';
   }
+}
 
+let risultato = dimmichivince(sommaNum, pdUser);
+console.log('questo è il risultato:' ,risultato);
 
-console.log('numero del computer: ',numeroRandom);
-
-console.log('il numero che hai scelto: ', numUtente);
-
-console.log('la somma è: ', parseInt(numeroRandom)+parseInt(numUtente));
-
-console.log("risultato", risultatoFinale);
