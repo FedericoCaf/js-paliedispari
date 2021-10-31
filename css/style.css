@@ -1,0 +1,35 @@
+body{
+  background-color: steelblue;
+}
+
+.palindrom{
+  height: 50px;
+  /* background-color:royalblue; */
+}
+
+.user-choise{
+  height: 50px;
+  /* background-color:teal; */
+}
+
+.num-utente-html, .num-computer-html{
+  height: 100px;
+  width: 50%;
+  /* background-color:turquoise; */
+  border: 1px solid black;
+}
+
+.somma-html{
+  height: 75px;
+  /* background-color: black; */
+}
+
+.risultato-html{
+  height: 100px;
+  width: 25%;
+  margin: 0 auto;
+  background-color:orange;
+  border-radius: 50%;
+  margin-top: 40px;
+}
+
