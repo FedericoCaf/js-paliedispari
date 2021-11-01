@@ -1,5 +1,5 @@
-// let parolaUtente = prompt('Inserisci una parola qualsiasi');
-let parolaUtente = 'ailatiditalia';
+let parolaUtente = prompt('Inserisci una parola qualsiasi');
+// let parolaUtente = 'ailatiditalia';
 let esito = isPalindromo(parolaUtente);
 
 console.log(esito);
@@ -14,17 +14,17 @@ const risultatoHtml = document.querySelector('.risultato-html');
 palindrom.innerHTML = esito;
 
 
-let pdUser = 'pari';
-// let pdUser;
-// do{
-  // pdUser = prompt('Scegli pari o dispari');
-// } while (pdUser !== 'pari' && pdUser !== 'dispari') 
+// let pdUser = 'pari';
+let pdUser;
+do{
+  pdUser = prompt('Scegli pari o dispari');
+} while (pdUser !== 'pari' && pdUser !== 'dispari') 
 
-let numUtente = 3;
-// let numUtente;
-// do{
-  // numUtente = parseInt(prompt('Inserisci un numero da 1 a 5'));
-// } while (numUtente < 1 || numUtente > 5 || isNaN(numUtente));
+// let numUtente = 3;
+let numUtente;
+do{
+  numUtente = parseInt(prompt('Inserisci un numero da 1 a 5'));
+} while (numUtente < 1 || numUtente > 5 || isNaN(numUtente));
 
 //memorizzo il numero calcolato con la funzione in una variabile
 let numeroCPU = calcolaNumero(5,1);
